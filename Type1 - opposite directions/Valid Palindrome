@@ -10,7 +10,7 @@ Input: s = "race a car"
 Output: false
 Explanation: "raceacar" is not a palindrome.
 
-## solution:
+## solution - 1:
 class Solution(object):
     def isPalindrome(self, s):
         """
@@ -29,3 +29,16 @@ class Solution(object):
             left += 1
             right -= 1
         return True 
+
+## solution - 2 (optimized soltion with different approach):
+class Solution:
+	def isPalinSent(self, s):
+		# code here
+		s1 = []
+		for ch in s:
+		    if ch in s:
+		        if ch.isalnum():
+		            s1.append(ch.lower())
+	    s1 = ''.join(s1)
+	    rev = s1[::-1]
+	    return s1 == rev
