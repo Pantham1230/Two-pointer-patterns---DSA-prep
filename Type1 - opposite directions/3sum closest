@@ -31,4 +31,46 @@ class Solution(object):
                     right -= 1
                 else:
                     return curr_sum
-        return closest_sum
+        return closest_sum  
+
+## PS2(GFG): 
+Given an array arr[] and an integer target, the task is to find the sum of three integers in arr[] such that the sum is closest to target. 
+Note: If multiple sums are closest to target, return the maximum one.
+Input: arr[] = [-1, 2, 2, 4], target = 4
+Output: 5
+Explanation: All possible triplets
+[-1, 2, 2], sum = (-1) + 2 + 2 = 3
+[-1, 2, 4], sum = (-1) + 2 + 4 = 5
+[-1, 2, 4], sum = (-1) + 2 + 4 = 5
+[2, 2, 4], sum = 2 + 2 + 4 = 8
+Triplet [-1, 2, 2], [-1, 2, 4] and [-1, 2, 4] have sum closest to target, so return the maximum one, that is 5. 
+
+## solution2:
+class Solution:
+    def closest3Sum(self, arr, target):
+        arr.sort()
+        n = len(arr)
+        closest = arr[0] + arr[1] + arr[2]
+        min_diff = abs(closest - target)
+        for i in range(n - 2):
+            # Optional duplicate skip 
+            if i > 0 and arr[i] == arr[i - 1]:
+                continue
+            left = i + 1
+            right = n - 1
+            while left < right:
+                curr = arr[i] + arr[left] + arr[right]
+                diff = abs(curr - target)
+                # Update closest
+                if diff < min_diff:
+                    min_diff = diff
+                    closest = curr
+                elif diff == min_diff:
+                    closest = max(closest, curr) 
+                if curr < target:
+                    left += 1
+                elif curr > target:
+                    right -= 1
+                else:
+                    return curr 
+        return closest
