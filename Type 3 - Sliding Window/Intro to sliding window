@@ -1,0 +1,41 @@
+🔁 Sliding Window Technique – Introduction
+The Sliding Window technique is an efficient algorithmic approach used to process a range of elements in an array or string by maintaining a “window” (subarray or substring) that moves step-by-step instead of recalculating results from scratch every time.
+Instead of using nested loops to check all possible subarrays (which leads to higher time complexity like O(n²)), the sliding window optimizes the process by reusing previously computed results and adjusting only the necessary elements when the window shifts.
+This makes it a powerful technique for solving problems involving contiguous subarrays or substrings.
+💡 Core Idea
+The main idea behind the sliding window is to:
+-> Maintain a window with a start and end pointer
+-> Expand the window when needed
+-> Shrink the window when constraints are violated
+-> Update the result dynamically while moving the window
+This avoids redundant computations and improves performance significantly.
+⚡ Why Use Sliding Window?
+-> Reduces time complexity from O(n²) to O(n)
+-> Efficient for large datasets
+-> Eliminates unnecessary re-calculations
+-> Commonly asked in coding interviews and DSA rounds
+🧠 When to Use Sliding Window?
+Use this technique when:
+-> The problem involves contiguous subarrays or substrings
+-> You are asked to find maximum, minimum, longest, or shortest window
+-> The input is an array, string, or list
+-> The problem includes conditions like sum, frequency, or length constraints
+📌 Types of Sliding Window
+1. Fixed Size Window
+The window size remains constant while sliding across the array.
+Example: Maximum sum of subarray of size k.
+2. Variable Size Window
+The window size expands and shrinks based on a condition.
+Example: Longest substring without repeating characters.
+🔍 General Working Pattern
+1. Initialize two pointers (left and right)
+2. Expand the right pointer to include elements into the window
+3. Check if the window satisfies the condition
+4. If not, move the left pointer to shrink the window
+5. Update the result at each valid state
+⏱️ Time Complexity
+Usually O(n) because each element is visited at most twice (once by left pointer and once by right pointer)
+🚀 Summary
+The Sliding Window technique is a must-know pattern in Data Structures and Algorithms. 
+It helps solve optimization problems on arrays and strings efficiently by converting brute-force solutions into linear-time solutions. 
+Mastering this technique is essential for coding interviews, competitive programming, and real-world performance-critical applications.
